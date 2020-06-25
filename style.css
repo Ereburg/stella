@@ -1,0 +1,237 @@
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #020303;
+  --color-grey: #CACCCE;
+}
+
+body {
+  font-family: "Montserrat", -apple-system,
+    "BlickMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-size: 16px;
+  color: var(--color-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-black);
+}
+
+.header__title {
+  display: block;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.25;
+  color: var(--color-white);
+}
+
+.header__position {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.hero-wrapper {
+  position: relative;
+  padding-top: 93.125%;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.section__header {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border-bottom: 1px solid var(--color-white);
+}
+
+.section__title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.section__arrow {
+  position: relative;
+  display: inline-flex;
+  margin-left: 16px;
+  width: 20px;
+  height: 20px;
+  border-bottom: 3px solid var(--color-white);
+  border-left: 3px solid var(--color-white);
+  transition: transform 450ms ease;
+}
+
+.section__arrow::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  display: inline-flex;
+  min-width: 24px;
+  height: 3px;
+  background-color: var(--color-white);
+  transform: rotate(-45deg) translate(2px, -7.5px);
+}
+
+.active > .section__header {
+  border-color: var(--color-black);
+}
+
+.active > .section__header .section__arrow {
+  transform: rotate(180deg);
+}
+
+.skill__title {
+  padding: 8px 16px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.33;
+  text-align: center;
+  border-top: 1px solid var(--color-black);
+  border-bottom: 1px solid var(--color-black);
+}
+
+.skill:first-of-type .skill__title {
+  border-top: 1px solid var(--color-white);
+}
+
+.skill__list {
+  padding: 16px;
+}
+
+.skill__item {
+  position: relative;
+  padding: 8px 16px 8px 28px;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.skill__item:last-child {
+  margin-bottom: 0;
+}
+
+.skill__item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 12px;
+  height: 28px;
+  background: url("bullet.svg") center no-repeat;
+  background-size: contain;
+  transform: translateY(-50%);
+}
+
+.projects__header {
+  width: 100%;
+  padding: 16px;
+  text-align: left;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.active > .projects__header{
+  background-color: var(--color-grey);
+  border-color: var(--color-black);
+}
+
+.projects__title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.33;
+  text-align: left;
+}
+
+.projects__content > * {
+  padding: 32px 16px;
+}
+
+.projects__content > *:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.contacts__list {
+  padding: 32px 16px;
+}
+
+.contacts__item {
+  margin-bottom: 32px;
+}
+
+.contacts__item:last-child {
+  margin-bottom: 0;
+}
+
+.external-link {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.external-link:last-child {
+  margin-bottom: 0;
+}
+
+.external-link img {
+  margin-left: 14px;
+}
+
+.font-base {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.js-content {
+  display: none;
+}
+
+.js-collapse.active > .js-content {
+  display: block;
+}
+
+.js-content.animate {
+  position: relative;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  transition: height 450ms linear;
+}
