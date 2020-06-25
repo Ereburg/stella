@@ -161,12 +161,21 @@ body {
   padding: 16px;
   text-align: left;
   border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid var(--color-black);
+  transition: border-color 0s;
 }
 
 .active > .projects__header{
   background-color: var(--color-grey);
   border-color: var(--color-black);
+}
+
+.projects__item + .projects__item.active > .projects__header {
+  border-top-color: transparent;
+}
+
+.projects__item.active + .projects__item > .projects__header {
+  border-top-color:var(--color-black);
 }
 
 .projects__title {
