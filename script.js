@@ -3,6 +3,7 @@ class Collapse {
     this.node = node;
     this.btn = this.node.querySelector('.js-btn');
     this.content = this.node.querySelector('.js-content');
+    this.projectItems = document.querySelectorAll('.projects__content');
 
     this.events();
   }
@@ -12,13 +13,21 @@ class Collapse {
   }
 
   handler(e) {
+    if (this.node.classList.contains('projects') && this.node.classList.contains('active') && window.innerWidth > 1149) {
+      this.projectItems.forEach(item => item.classList.contains('active') ? item.classList.remove('active') : null);
+    } 
     if (this.node.classList.contains('projects__item') && window.innerWidth > 1149) {
-      document.querySelectorAll('.projects__content').forEach(item => item.classList.remove('active'));
-      this.content.classList.contains('active') ? this.content.classList.remove('active') : this.content.classList.add('active');
+      let target = e.target;
+      
+      this.projectItems.forEach((item) => {
+        if (!(item === target.nextElementSibling)) item.classList.contains('active') ? item.classList.remove('active') : null
+      });
+     
+      target.nextElementSibling.classList.toggle('active');
+
+      return;
     }
-    else {
-      this.node.classList.contains('active') ? this.hide() : this.show();
-    }
+    this.node.classList.contains('active') ? this.hide() : this.show();
   }
 
   show() {
@@ -52,8 +61,6 @@ class Collapse {
   static animate(elem, height) {
     const handler = ({target, currentTarget}) => {
       if (target !== currentTarget) return false;
-
-      console.log('llll');
       
       elem.removeEventListener('transitionend', handler);
       elem.classList.remove('animate');

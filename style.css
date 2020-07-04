@@ -247,6 +247,7 @@ body {
 
 @media (min-width: 1150px) {
   .main {
+    position: relative;
     display: flex;
     height: calc(100vh - 108px);
 
@@ -271,15 +272,16 @@ body {
 
   .projects__content {
     display: block;
-  position: absolute;
-  top: 108px;
-  right: 320px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--color-white);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 250ms linear;
+    position: fixed;
+    top: 108px;
+    right: 320px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-white);
+    pointer-events: none;
+    opacity: 0;
+    /* transition: opacity 200ms ease; */
+    overflow-y: scroll;
   }
 
   .projects__content.active {
