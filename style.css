@@ -20,6 +20,7 @@ body {
   color: var(--color-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--color-black);
 }
 
 .header {
@@ -246,10 +247,6 @@ body {
 }
 
 @media (min-width: 1150px) {
-  body {
-    background: var(--color-black);
-  }
-
   .header__title {
     font-weight: 900;
     font-size: 56px;
@@ -299,7 +296,7 @@ body {
     overflow-y: scroll;
     scrollbar-width: none;
   }
-  
+
   .projects__content::-webkit-scrollbar {
     display: none;
   }
