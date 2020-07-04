@@ -26,15 +26,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: var(--color-black);
 }
-
-.main {
-  flex: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.side-menu {
-  margin-top: auto;
+@media screen and (max-width: 1149px) {
+  .main {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .side-menu {
+    margin-top: auto;
+  }
 }
 
 .header {

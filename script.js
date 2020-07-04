@@ -31,8 +31,18 @@ class Collapse {
   }
 
   show() {
-    this.node.classList.add('active');
-    Collapse.expand(this.content);
+    Promise.resolve()
+    .then(()=> {
+      this.node.classList.add('active');
+      Collapse.expand(this.content);
+    })
+    .then(() => {
+      if (window.innerWidth > 1149) return;
+      scrollBy({
+        top: this.node.getBoundingClientRect().top,
+        behavior: 'smooth'
+      })
+    })
   }
 
   hide() {
