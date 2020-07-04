@@ -246,6 +246,10 @@ body {
   transition: height 450ms linear;
 }
 
+.section {
+  background-color: var(--color-white);
+}
+
 @media (min-width: 1150px) {
   .header__title {
     font-weight: 900;
