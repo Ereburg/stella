@@ -268,4 +268,22 @@ body {
   .section {
     background-color: var(--color-white);
   }
+
+  .projects__content {
+    display: block;
+  position: absolute;
+  top: 108px;
+  right: 320px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-white);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 250ms linear;
+  }
+
+  .projects__content.active {
+    opacity: 1;
+    pointer-events: initial;
+  }
 }

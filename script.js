@@ -12,13 +12,18 @@ class Collapse {
   }
 
   handler(e) {
-    this.node.classList.contains('active') ? this.hide() : this.show();
+    if (this.node.classList.contains('projects__item') && window.innerWidth > 1149) {
+      document.querySelectorAll('.projects__content').forEach(item => item.classList.remove('active'));
+      this.content.classList.contains('active') ? this.content.classList.remove('active') : this.content.classList.add('active');
+    }
+    else {
+      this.node.classList.contains('active') ? this.hide() : this.show();
+    }
   }
 
   show() {
     this.node.classList.add('active');
     Collapse.expand(this.content);
-    
   }
 
   hide() {
